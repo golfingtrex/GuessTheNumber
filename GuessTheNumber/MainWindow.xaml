@@ -1,0 +1,117 @@
+﻿<Window x:Class="GuessTheNumber.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:GuessTheNumber"
+        mc:Ignorable="d"
+        Title="Guess" Height="450" Width="350" ResizeMode="NoResize"
+        WindowStartupLocation="CenterScreen"
+        FontFamily="Source Code Pro">
+
+    <!--A simple number guessing game. Have a Label or TextBlock prompt the user for to input a number between 0-9 to guess if
+        it's the right number. It should be 0-9 because I want to have a GUI numberpad for the user to click on. Perhaps I can
+        raise the difficulty by allowing the user to either click the number pad or enter the number from their keyboard. There
+        can also be other elements of WPF incorporated like changing the colors to Green or Red depending of they got the number,
+        or sound effects and animations... perhaps some other things to make the program a little more interesting.-->
+
+
+    <!--The prompt to the user to guess the number.-->
+    <StackPanel Margin="10">
+        <TextBlock Text="Can you guess the number?"
+                   FontSize="20"
+                   HorizontalAlignment="Center"
+                   Margin="5"/>
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+
+            <!--The correct number, hidden.-->
+            <TextBlock Text="5"
+                       TextAlignment="Center"
+                       Width="80"
+                       FontSize="64"
+                       Background="Black"
+                       Grid.Column="1"
+                       Margin="10"/>
+        </Grid>
+
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+
+            <!--The correct number, hidden.-->
+            <StackPanel Grid.Column="1">
+                <StackPanel Orientation="Horizontal">
+
+                    <Button Content="7"
+                            Width="50"
+                            Height="50"
+                            Margin="2"/>
+                    <Button Content="8"
+                            Width="50"
+                            Height="50"
+                            Margin="2"/>
+                    <Button Content="9"
+                            Width="50"
+                            Height="50"
+                            Margin="2"/>
+                </StackPanel>
+
+                <StackPanel Orientation="Horizontal">
+                    <Button Content="4"
+                            Width="50"
+                            Height="50"
+                            Margin="2"/>
+                    <Button Content="5"
+                            Width="50"
+                            Height="50"
+                            Margin="2"/>
+                    <Button Content="6"
+                            Width="50"
+                            Height="50"
+                            Margin="2"/>
+                </StackPanel>
+
+                <StackPanel Orientation="Horizontal">
+                    <Button Content="1"
+                            Width="50"
+                            Height="50"
+                            Margin="2"/>
+                    <Button Content="2"
+                            Width="50"
+                            Height="50"
+                            Margin="2"/>
+                    <Button Content="3"
+                            Width="50"
+                            Height="50"
+                            Margin="2"/>
+                </StackPanel>
+
+                <StackPanel Orientation="Horizontal">
+                    <Button Content="0"
+                            Width="104"
+                            Height="50"
+                            Margin="2"/>
+                    <Button Background="#A3BE8C"
+                            Width="50"
+                            Height="50"
+                            Margin="2">
+                        <Button.Content>
+                            <Image Source="Images\R.png"/>
+                        </Button.Content>
+                    </Button>
+                </StackPanel>
+
+            </StackPanel>
+        </Grid>
+
+    </StackPanel>
+
+</Window>
