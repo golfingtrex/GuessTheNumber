@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:GuessTheNumber"
         mc:Ignorable="d"
-        Title="Guess" Height="450" Width="350" ResizeMode="NoResize"
+        Title="Guess" Height="480" Width="350" ResizeMode="NoResize"
         WindowStartupLocation="CenterScreen"
         FontFamily="Source Code Pro">
 
@@ -22,6 +22,10 @@
                    FontSize="20"
                    HorizontalAlignment="Center"
                    Margin="5"/>
+
+        <!--The Grid used to center a TextBlock displaying the user's guess, and a TextBlock that is blacked out,
+        hiding the winning number. The TextBlock with the user's number updates and the keypad is pressed and
+        the TextBlock with the winning number is revealed when the user presses the green check mark.-->
         <Grid>
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="*"/>
@@ -29,16 +33,29 @@
                 <ColumnDefinition Width="*"/>
             </Grid.ColumnDefinitions>
 
-            <!--The correct number, hidden.-->
-            <TextBlock Text="5"
-                       TextAlignment="Center"
-                       Width="80"
-                       FontSize="64"
-                       Background="Black"
-                       Grid.Column="1"
-                       Margin="10"/>
+            <StackPanel Orientation="Horizontal"
+                        Grid.Column="1">
+
+                <!--The user's guessed number.-->
+                <TextBlock Text="5"
+                           TextAlignment="Center"
+                           Width="80"
+                           FontSize="64"
+                           Grid.Column="1"
+                           Margin="10"/>
+
+                <!--The correct number, hidden.-->
+                <TextBlock Text="5"
+                           TextAlignment="Center"
+                           Width="80"
+                           FontSize="64"
+                           Background="Black"
+                           Grid.Column="1"
+                           Margin="10"/>
+            </StackPanel>
         </Grid>
 
+        <!--The Grid containing StackPanels that center the keypad Buttons.-->
         <Grid>
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="*"/>
@@ -46,62 +63,61 @@
                 <ColumnDefinition Width="*"/>
             </Grid.ColumnDefinitions>
 
-            <!--The correct number, hidden.-->
             <StackPanel Grid.Column="1">
                 <StackPanel Orientation="Horizontal">
 
                     <Button Content="7"
-                            Width="50"
-                            Height="50"
+                            Width="70"
+                            Height="70"
                             Margin="2"/>
                     <Button Content="8"
-                            Width="50"
-                            Height="50"
+                            Width="70"
+                            Height="70"
                             Margin="2"/>
                     <Button Content="9"
-                            Width="50"
-                            Height="50"
+                            Width="70"
+                            Height="70"
                             Margin="2"/>
                 </StackPanel>
 
                 <StackPanel Orientation="Horizontal">
                     <Button Content="4"
-                            Width="50"
-                            Height="50"
+                            Width="70"
+                            Height="70"
                             Margin="2"/>
                     <Button Content="5"
-                            Width="50"
-                            Height="50"
+                            Width="70"
+                            Height="70"
                             Margin="2"/>
                     <Button Content="6"
-                            Width="50"
-                            Height="50"
+                            Width="70"
+                            Height="70"
                             Margin="2"/>
                 </StackPanel>
 
                 <StackPanel Orientation="Horizontal">
                     <Button Content="1"
-                            Width="50"
-                            Height="50"
+                            Width="70"
+                            Height="70"
                             Margin="2"/>
                     <Button Content="2"
-                            Width="50"
-                            Height="50"
+                            Width="70"
+                            Height="70"
                             Margin="2"/>
                     <Button Content="3"
-                            Width="50"
-                            Height="50"
+                            Width="70"
+                            Height="70"
                             Margin="2"/>
                 </StackPanel>
 
                 <StackPanel Orientation="Horizontal">
                     <Button Content="0"
-                            Width="104"
-                            Height="50"
+                            Width="144"
+                            Height="70"
                             Margin="2"/>
                     <Button Background="#A3BE8C"
-                            Width="50"
-                            Height="50"
+                            Width="70"
+                            Height="70"
                             Margin="2">
                         <Button.Content>
                             <Image Source="Images\R.png"/>
@@ -111,7 +127,5 @@
 
             </StackPanel>
         </Grid>
-
     </StackPanel>
-
 </Window>
