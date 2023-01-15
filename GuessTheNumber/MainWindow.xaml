@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:GuessTheNumber"
         mc:Ignorable="d"
-        Title="Guess" Height="480" Width="350" ResizeMode="NoResize"
+        Title="Guess" Height="525" Width="350" ResizeMode="NoResize"
         WindowStartupLocation="CenterScreen"
         FontFamily="Source Code Pro">
 
@@ -33,30 +33,31 @@
                 <ColumnDefinition Width="*"/>
             </Grid.ColumnDefinitions>
 
-            <StackPanel Orientation="Horizontal"
-                        Grid.Column="1">
+
+            <!--The StackPanel containing the user's guessed number and the winning number.-->
+            <StackPanel Grid.Column="1">
 
                 <!--The user's guessed number.-->
-                <TextBlock Text="5"
+                <TextBlock Name="GuessedNumberTextBlock"
                            TextAlignment="Center"
-                           Width="80"
-                           FontSize="64"
+                           Width="218"
+                           FontSize="16"
                            Grid.Column="1"
-                           Margin="10"/>
+                           Margin="10,5"/>
 
                 <!--The correct number, hidden.-->
-                <TextBlock Text="5"
+                <TextBlock Name="WinningNumberTextBlock"
                            TextAlignment="Center"
-                           Width="80"
-                           FontSize="64"
+                           Width="218"
+                           FontSize="16"
                            Background="Black"
                            Grid.Column="1"
-                           Margin="10"/>
+                           Margin="10,5"/>
             </StackPanel>
         </Grid>
 
         <!--The Grid containing StackPanels that center the keypad Buttons.-->
-        <Grid>
+        <Grid Name="KeypadGrid">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="*"/>
                 <ColumnDefinition Width="Auto"/>
@@ -115,17 +116,82 @@
                             Width="144"
                             Height="70"
                             Margin="2"/>
-                    <Button Background="#A3BE8C"
+                    <Button Name="CheckMarkButton"
+                            Background="#A3BE8C"
                             Width="70"
                             Height="70"
                             Margin="2">
                         <Button.Content>
-                            <Image Source="Images\R.png"/>
+                            <Image Source="Images\CheckMark.png"/>
                         </Button.Content>
                     </Button>
                 </StackPanel>
 
             </StackPanel>
         </Grid>
+
+        <Grid Name="DifficultiesGrid">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+
+            <StackPanel HorizontalAlignment="Right">
+                <RadioButton Name="Novice"
+                             GroupName="Difficulites"
+                             IsChecked="True"
+                             ToolTip="0-3"
+                         Content="Novice"
+                         Margin="2"/>
+                <RadioButton Name="Average"
+                             GroupName="Difficulites"
+                             ToolTip="0-10"
+                         Content="Average"
+                         Margin="2"/>
+                <RadioButton Name="Experienced"
+                             GroupName="Difficulites"
+                             ToolTip="0-25"
+
+
+
+
+                         Content="Experienced"
+                         Margin="2"/>
+                <RadioButton Name="Skilled"
+                             GroupName="Difficulites"
+                             ToolTip="0-50"
+
+                         Content="Skilled"
+                         Margin="2"/>
+            </StackPanel>
+            <StackPanel Grid.Column="1">
+                <RadioButton Name="Adept"
+                             GroupName="Difficulites"
+                         Content="Adept"
+                             ToolTip="0-75"
+                         Margin="2"/>
+                <RadioButton Name="Masterful"
+                             GroupName="Difficulites"
+                         Content="Masterful"
+                             ToolTip="0-100"
+                         Margin="2"/>
+                <RadioButton Name="Inhuman"
+                             GroupName="Difficulites"
+                         Content="Inhuman"
+                             ToolTip="0-150"
+                         Margin="2"/>
+                <RadioButton Name="Godlike"
+                             GroupName="Difficulites"
+                         Content="Godlike"
+                             ToolTip="0-250"
+                         Margin="2"/>
+                <!--<Button Name="Play"
+                    Content="Play!"
+                    Width="120"
+                    HorizontalAlignment="Left"
+                    Margin="2"/>-->
+            </StackPanel>
+        </Grid>
+
     </StackPanel>
 </Window>

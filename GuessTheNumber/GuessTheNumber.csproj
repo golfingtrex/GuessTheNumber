@@ -8,11 +8,11 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <None Remove="Images\R.png" />
+    <None Remove="Images\CheckMark.png" />
   </ItemGroup>
 
   <ItemGroup>
-    <Resource Include="Images\R.png">
+    <Resource Include="Images\CheckMark.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Resource>
   </ItemGroup>
