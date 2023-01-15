@@ -24,7 +24,7 @@
                    Margin="5"/>
 
         <!--The Grid used to center a TextBlock displaying the user's guess, and a TextBlock that is blacked out,
-        hiding the winning number. The TextBlock with the user's number updates and the keypad is pressed and
+        hiding the winning number. The TextBlock with the user's number updates when the keypad is pressed and
         the TextBlock with the winning number is revealed when the user presses the green check mark.-->
         <Grid>
             <Grid.ColumnDefinitions>
@@ -32,7 +32,6 @@
                 <ColumnDefinition Width="Auto"/>
                 <ColumnDefinition Width="*"/>
             </Grid.ColumnDefinitions>
-
 
             <!--The StackPanel containing the user's guessed number and the winning number.-->
             <StackPanel Grid.Column="1">
@@ -45,7 +44,7 @@
                            Grid.Column="1"
                            Margin="10,5"/>
 
-                <!--The correct number, hidden.-->
+                <!--The winning number, hidden.-->
                 <TextBlock Name="WinningNumberTextBlock"
                            TextAlignment="Center"
                            Width="218"
@@ -56,7 +55,8 @@
             </StackPanel>
         </Grid>
 
-        <!--The Grid containing StackPanels that center the keypad Buttons.-->
+        <!--The Grid containing StackPanels that center the keypad Buttons. There are four horizontal StackPanels,
+        each containing two or three buttons representing the keypad and submission button.-->
         <Grid Name="KeypadGrid">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="*"/>
@@ -66,7 +66,6 @@
 
             <StackPanel Grid.Column="1">
                 <StackPanel Orientation="Horizontal">
-
                     <Button Content="7"
                             Width="70"
                             Height="70"
@@ -80,7 +79,6 @@
                             Height="70"
                             Margin="2"/>
                 </StackPanel>
-
                 <StackPanel Orientation="Horizontal">
                     <Button Content="4"
                             Width="70"
@@ -95,7 +93,6 @@
                             Height="70"
                             Margin="2"/>
                 </StackPanel>
-
                 <StackPanel Orientation="Horizontal">
                     <Button Content="1"
                             Width="70"
@@ -110,7 +107,6 @@
                             Height="70"
                             Margin="2"/>
                 </StackPanel>
-
                 <StackPanel Orientation="Horizontal">
                     <Button Content="0"
                             Width="144"
@@ -126,10 +122,12 @@
                         </Button.Content>
                     </Button>
                 </StackPanel>
-
             </StackPanel>
         </Grid>
 
+        <!--The Grid containing RadioButtons which select the difficulty of the game. There are two StackPanels within the grid
+        and the RadioButtons are grouped together using the GroupName property so that only one difficulty can be selected at
+        a time.-->
         <Grid Name="DifficultiesGrid">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="*"/>
@@ -138,60 +136,49 @@
 
             <StackPanel HorizontalAlignment="Right">
                 <RadioButton Name="Novice"
+                             Content="Novice"
                              GroupName="Difficulites"
                              IsChecked="True"
                              ToolTip="0-3"
-                         Content="Novice"
-                         Margin="2"/>
+                             Margin="2"/>
                 <RadioButton Name="Average"
+                             Content="Average"
                              GroupName="Difficulites"
                              ToolTip="0-10"
-                         Content="Average"
-                         Margin="2"/>
+                             Margin="2"/>
                 <RadioButton Name="Experienced"
+                             Content="Experienced"
                              GroupName="Difficulites"
                              ToolTip="0-25"
-
-
-
-
-                         Content="Experienced"
-                         Margin="2"/>
+                             Margin="2"/>
                 <RadioButton Name="Skilled"
+                             Content="Skilled"
                              GroupName="Difficulites"
                              ToolTip="0-50"
-
-                         Content="Skilled"
-                         Margin="2"/>
+                             Margin="2"/>
             </StackPanel>
             <StackPanel Grid.Column="1">
                 <RadioButton Name="Adept"
+                             Content="Adept"
                              GroupName="Difficulites"
-                         Content="Adept"
                              ToolTip="0-75"
-                         Margin="2"/>
+                             Margin="2"/>
                 <RadioButton Name="Masterful"
+                             Content="Masterful"
                              GroupName="Difficulites"
-                         Content="Masterful"
                              ToolTip="0-100"
-                         Margin="2"/>
+                             Margin="2"/>
                 <RadioButton Name="Inhuman"
+                             Content="Inhuman"
                              GroupName="Difficulites"
-                         Content="Inhuman"
                              ToolTip="0-150"
-                         Margin="2"/>
+                             Margin="2"/>
                 <RadioButton Name="Godlike"
+                             Content="Godlike"
                              GroupName="Difficulites"
-                         Content="Godlike"
                              ToolTip="0-250"
-                         Margin="2"/>
-                <!--<Button Name="Play"
-                    Content="Play!"
-                    Width="120"
-                    HorizontalAlignment="Left"
-                    Margin="2"/>-->
+                             Margin="2"/>
             </StackPanel>
         </Grid>
-
     </StackPanel>
 </Window>
